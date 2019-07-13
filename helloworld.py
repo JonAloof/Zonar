@@ -8,4 +8,5 @@ api = Api(app)
 def index():
     return "Hello World", 200
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
