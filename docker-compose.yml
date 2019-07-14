@@ -1,9 +1,8 @@
-version: '2'
+version: '3'
 services:
-  flask:
-    restart: always
+  web:
     build: .
     ports:
-     - "5000:5000"
+      - "5000:5000"
     volumes:
-- .:/code
+      - .:/code
