@@ -7,6 +7,8 @@ sentry_sdk.init(
     integrations=[FlaskIntegration()]
 )
 
+# Sentry messages can be manually logged using the base api.
+# More complex types of logging can be done using the Sentry client.
 sentry_sdk.capture_message("Test")
 
 app = Flask(__name__)
@@ -14,6 +16,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return "Hello World", 200
+
+@app.route('/throwexception')
+def throwexception():
+    # When this exception is thrown, Sentry will automatically log it thanks to its Flask integration.
+    raise ValueError("Something bad happened.")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
