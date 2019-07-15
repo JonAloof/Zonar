@@ -27,7 +27,7 @@ pipeline {
       agent any
       steps {
         sh 'docker-compose up --detach --build'
-        sh "curl http://zonar.unboxthepattern.com:9000/api/hooks/release/builtin/3/874fcbb4bff3514541bdbcba819818c13d458a28574259e15bc6cbc998d5e2ce/ -X POST -H 'Content-Type: application/json' -d '{ \\"version\\": \\"${currentBuild.number}\\" }'"
+        sh "curl http://zonar.unboxthepattern.com:9000/api/hooks/release/builtin/3/874fcbb4bff3514541bdbcba819818c13d458a28574259e15bc6cbc998d5e2ce/ -X POST -H 'Content-Type: application/json' -d '{ \\\"version\\\": \\\"${currentBuild.number}\\\" }'"
       }
     }
   }
