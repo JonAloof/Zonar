@@ -12,6 +12,10 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'Hello World')
 
+    def test_throwexception(self):
+        with self.assertRaises(Exception): 
+            self.app.get('/throwexception')
+
 if __name__ == '__main__':
     import xmlrunner
     runner = xmlrunner.XMLTestRunner(output='test-reports')
