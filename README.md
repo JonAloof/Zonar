@@ -1,21 +1,12 @@
 # Zonar Demo Project Setup Instructions:
 
-# Create virtual environment:
+# Create virtual environment and run service:
 
 py -3 -m venv env
-
-# Activate Virtual Environment:
-
 env/Scripts/Activate
-
-# Install Dependencies:
-
 pip install -r requirements.txt
-
-# Run service:
-
 python ./helloworld.py
 
-# Run unit tests:
+# And to run tests:
 
 python ./testhelloworld.py
